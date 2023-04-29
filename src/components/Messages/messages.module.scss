@@ -1,0 +1,104 @@
+.bubble {
+  width: 100%;
+  height: auto;
+  display: grid;
+  place-items: center;
+
+  & .bubbleWrap {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+
+    & .question {
+      width: 100%;
+      background-color: #343541;
+      display: grid;
+      place-items: center;
+      padding: 30px 0 30px;
+      border: 1px solid rgba(000, 000, 000, 0.2);
+
+      & .questionWrap {
+        width: 100%;
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        gap: 20px;
+        height: fit-content;
+
+        & .pfp {
+          height: 30px;
+          width: 30px;
+          border-radius: 2px;
+          background-color: red;
+          overflow: hidden;
+
+          & img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+          }
+        }
+
+        & .queText {
+          font-weight: 500;
+          font-size: 16px;
+          line-height: 24px;
+          color: #fff;
+          margin-top: 4px;
+          padding-right: 15%;
+          width: 100%;
+          max-width: 90%;
+        }
+      }
+    }
+
+    & .answer {
+      width: 100%;
+      background-color: #434654;
+      display: grid;
+      place-items: center;
+      padding: 30px 0 50px;
+      border: 1px solid rgba(000, 000, 000, 0.2);
+
+      & .answerWrap {
+        width: 100%;
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        gap: 20px;
+        height: fit-content;
+
+        & .pfp {
+          height: 30px;
+          width: 30px;
+          border-radius: 2px;
+          background-color: red;
+          overflow: hidden;
+
+          & img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+          }
+        }
+
+        & .ansText {
+          color: #fff;
+          margin-top: 4px;
+          padding-right: 10%;
+          width: 100%;
+          max-width: 90%;
+
+          & p {
+            font-size: 16px;
+            line-height: 24px;
+            font-weight: 400;
+            opacity: 0.8;
+          }
+        }
+      }
+    }
+  }
+}
