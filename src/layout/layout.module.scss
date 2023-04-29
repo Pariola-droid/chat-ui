@@ -1,0 +1,14 @@
+@import '../styles/core/variables';
+@import '../styles/core/typography';
+@import '../styles/utils/breakpoints';
+
+//
+.chatLayout {
+  background-color: #343541;
+}
+
+.chatArena {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
