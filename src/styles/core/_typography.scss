@@ -1,0 +1,56 @@
+%BodyL {
+  line-height: 140%;
+  letter-spacing: -0.02em;
+}
+
+%Heading40 {
+  font-size: 40px;
+  @extend %BodyL;
+}
+
+%Heading32 {
+  font-size: 32px;
+  @extend %BodyL;
+}
+
+%Heading24 {
+  font-size: 24px;
+  @extend %BodyL;
+}
+
+%Heading20 {
+  font-size: 20px;
+  @extend %BodyL;
+}
+
+%Heading18 {
+  font-size: 18px;
+  @extend %BodyL;
+}
+
+//
+
+%Body16 {
+  font-size: 16px;
+  @extend %BodyL;
+}
+
+%Body14 {
+  font-size: 14px;
+  @extend %BodyL;
+}
+
+%Body12 {
+  font-size: 12px;
+  @extend %BodyL;
+}
+
+%Body10 {
+  font-size: 10px;
+  @extend %BodyL;
+}
+
+%Body8 {
+  font-size: 8px;
+  @extend %BodyL;
+}
