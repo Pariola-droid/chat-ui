@@ -43,19 +43,19 @@ export default function Welcome() {
 
               <ul className="text-sm">
                 <li>
-                  <button className="w-full bg-gray-50 dark:bg-white/5 p-3 rounded-md hover:bg-gray-200 dark:hover:bg-[#202123]">
+                  <div className="w-full flex content-center justify-center text-center bg-gray-50 dark:bg-white/5 p-3 rounded-md cursor-default">
                     &quot;Explain quantum computing in simple terms&quot; →
-                  </button>
+                  </div>
                 </li>
                 <li>
-                  <button className="w-full bg-gray-50 dark:bg-white/5 p-3 rounded-md hover:bg-gray-200 dark:hover:bg-[#202123]">
+                  <div className="w-full flex content-center justify-center text-center bg-gray-50 dark:bg-white/5 p-3 rounded-md cursor-default">
                     &quot;Explain quantum computing in simple terms&quot; →
-                  </button>
+                  </div>
                 </li>
                 <li>
-                  <button className="w-full bg-gray-50 dark:bg-white/5 p-3 rounded-md hover:bg-gray-200 dark:hover:bg-[#202123]">
+                  <div className="w-full flex content-center justify-center text-center bg-gray-50 dark:bg-white/5 p-3 rounded-md cursor-default">
                     &quot;Explain quantum computing in simple terms&quot; →
-                  </button>
+                  </div>
                 </li>
               </ul>
             </div>

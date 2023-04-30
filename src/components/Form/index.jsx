@@ -13,18 +13,20 @@ export default function Form({ onSubmit }) {
   const [message, setMessage] = useState('');
 
   // Textarea auto resize
-  const handleKeyDown = (event) => {
-    if (event.shiftKey && event.keyCode === 13) {
+  const handleKeyPress = (event) => {
+    if (event.key === 'Enter' && event.shiftKey) {
       setRows(rows + 1);
+    } else if (event.key === 'Enter') {
+      handleSubmit(event);
     }
   };
 
-  function handleKeyUp(event) {
+  const handleKeyUp = (event) => {
     if (event.key === 'Backspace') {
       const lines = event.target.value.split('\n').length;
       setRows(lines);
     }
-  }
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -46,7 +48,7 @@ export default function Form({ onSubmit }) {
               placeholder="Type your message here..."
               value={message}
               rows={rows}
-              onKeyDown={handleKeyDown}
+              onKeyPress={handleKeyPress}
               onKeyUp={handleKeyUp}
               onChange={handleChange}
             ></textarea>
