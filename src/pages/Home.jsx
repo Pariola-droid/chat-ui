@@ -1,4 +1,4 @@
-import { Fragment, useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import shortid from 'shortid';
 import { Outlet, useNavigate, useParams } from 'react-router-dom';
 
@@ -11,14 +11,29 @@ import ChatArena from '../components/Chat';
 
 // Components
 import Form from '../components/Form';
-import Message from '../components/Messages';
-import Welcome from '../components/Welcome';
 
 export default function Home() {
   const navigate = useNavigate();
   const { id } = useParams();
 
-  const [newScreen, setNewScreen] = useState(true);
+  const [messages, setMessages] = useState([]);
+  const messageRef = useRef(null);
+
+  const handleSubmit = (message) => {
+    setMessages([
+      ...messages,
+      {
+        id: messages.length + 1,
+        message,
+      },
+    ]);
+  };
+
+  useEffect(() => {
+    if (messageRef.current) {
+      messageRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  }, [messages]);
 
   // Random page
   const generateNewChat = () => {
@@ -28,23 +43,8 @@ export default function Home() {
   return (
     <>
       <ChatLayout onNewChat={generateNewChat}>
-        <ChatArena>
-          {newScreen ? (
-            <Fragment>
-              <Welcome />
-            </Fragment>
-          ) : (
-            <Fragment>
-              <Message />
-              <Message />
-              <Message />
-              <Message />
-              <Message />
-              <Message />
-            </Fragment>
-          )}
-        </ChatArena>
-        <Form onSubmit />
+        <ChatArena messages={messages} messageRef={messageRef} />
+        <Form onSubmit={handleSubmit} />
       </ChatLayout>
     </>
   );

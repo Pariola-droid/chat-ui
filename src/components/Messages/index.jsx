@@ -1,9 +1,11 @@
-import React from 'react';
+import PropTypes from 'prop-types';
 
 // Styles
 import styles from './messages.module.scss';
 
-const Message = () => {
+const Message = ({ message }) => {
+  const { message: question, answer } = message;
+
   return (
     <div className={styles.bubble}>
       <div className={`${styles.bubbleWrap}`}>
@@ -15,10 +17,7 @@ const Message = () => {
                 alt="user pfp"
               />
             </div>
-            <div className={styles.queText}>
-              Building a random chat app in react js using mock data Building a
-              random chat app in react js using mock data
-            </div>
+            <div className={styles.queText}>{question}</div>
           </div>
         </div>
 
@@ -30,35 +29,19 @@ const Message = () => {
                 alt="user pfp"
               />
             </div>
-            <div className={styles.ansText}>
-              <p>
-                To convert this linear gradient to hex code, we need to first
-                break it down into its individual color components. The gradient
-                consists of two colors: rgba(38, 192, 228, 0) and #3a82d7.
-              </p>{' '}
-              <br />
-              <p>
-                The first color, rgba(38, 192, 228, 0), is a transparent color
-                with an RGB value of (38, 192, 228) and an alpha value of 0.
-                This means that the color is fully transparent.{' '}
-              </p>
-              <br />
-              <p>
-                The second color, #3a82d7, is a solid color with an RGB value of
-                (58, 130, 215).{' '}
-              </p>
-              <br />
-              <p>
-                Now, to convert the linear gradient to hex code, we need to find
-                the midpoint of the gradient. This can be done by taking the
-                average of the two RGB values:
-              </p>
-            </div>
+            <div className={styles.ansText}>{answer}</div>
           </div>
         </div>
       </div>
     </div>
   );
+};
+
+Message.propTypes = {
+  message: PropTypes.shape({
+    message: PropTypes.node.isRequired,
+    answer: PropTypes.node.isRequired,
+  }).isRequired,
 };
 
 export default Message;

@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable no-case-declarations */
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 //icons
 import * as Icons from '../../components/Icons';

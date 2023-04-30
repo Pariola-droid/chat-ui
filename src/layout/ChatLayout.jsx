@@ -6,8 +6,8 @@ import Sidebar from './Sidebar';
 import styles from './layout.module.scss';
 
 ChatLayout.propTypes = {
-  onNewChat: PropTypes.element.isRequired,
-  children: PropTypes.element.isRequired,
+  onNewChat: PropTypes.func.isRequired,
+  children: PropTypes.node.isRequired,
 };
 
 export default function ChatLayout(props) {
